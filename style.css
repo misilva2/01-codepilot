@@ -1,4 +1,9 @@
-html {
-  height: 100%;
-  width: 100%;
-}
+
+/* Give the header a blue background and white text */
+header {
+    background-color: #007BFF;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+} 

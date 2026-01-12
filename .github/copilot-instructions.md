@@ -7,35 +7,35 @@ Keep guidance compact and focused on actionable, repository-specific details so 
 - Project type: Static HTML/CSS (no build tool). Key files: `index.html`, `style.css`, `README.md`.
 - Dev container: `.devcontainer/devcontainer.json` exists — use Codespaces / devcontainer for a consistent environment.
 
-**What to edit**
-- Change markup in `index.html` for structure/content updates.
-- Change visual styles in `style.css`. There is no JS; frontend behavior is purely static.
+## Copilot instructions — 01-codepilot
 
-**Local preview**
-- There is no build step. Preview the site by opening `index.html` in a browser or serving the folder:
+This is a minimal static site: a single HTML page and a single global CSS file. Key files:
 
-```bash
-python -m http.server 8000
-# or
-npm install -g live-server && live-server
-```
+- [index.html](index.html) — page markup (header/title present).
+- [style.css](style.css) — global styling for the page.
+- [README.md](README.md) — project notes and preview hints.
+- .devcontainer/devcontainer.json — devcontainer available for Codespaces.
 
-In Codespaces / devcontainer, forward port `8000` to preview the running server.
+Quick facts
+- No build tool or bundler. The site is served as static files.
+- No JS present by default; behavioral changes are not required here.
 
-**Testing & CI**
-- No tests or CI configured in this repo. Small iterative changes should be verified by running the local preview.
+Common tasks & examples
+- Edit page content: update the DOM in [index.html](index.html) (e.g., modify the `<header>` and `<h1>`).
+- Edit visual styles: change selectors in [style.css](style.css). Styles are global — prefer small, targeted edits.
 
-**Coding conventions & patterns**
-- Keep markup semantic and minimal: this project favors straightforward HTML structure in `index.html`.
-- CSS is global (single `style.css`), not component-scoped — avoid introducing heavy CSS frameworks without updating README.
+Previewing locally
+- Simple Python server: `python -m http.server 8000` then open http://localhost:8000
+- Alternative: `live-server` (npm) for auto-reload.
+- In Codespaces/devcontainer forward port `8000` to preview the running server.
 
-**Change suggestions for agents**
-- For content changes: modify `index.html` and run a quick preview to verify layout.
-- For style tweaks: edit `style.css`; prefer small, incremental changes and verify visually.
-- If adding JS or new tooling, include a short note in `README.md` documenting the new commands and rationale.
+Developer notes for agents
+- Keep changes minimal and focused — this repo favors tiny, surgical edits.
+- When adding new files (JS, build tooling), update [README.md](README.md) with exact commands to run and preview.
+- No tests or CI detected — validate changes by running the local preview and verifying visual output.
 
-**Commit & PR guidance**
-- Keep changes small and focused: one logical change per branch/PR.
-- PR description: state what changed, why, and how to preview locally (commands above).
+PR & commit guidance
+- One logical change per PR. In the PR description include: what changed, why, and the preview steps (the `python -m http.server` command is sufficient).
 
+If anything here is unclear or you want more details (devcontainer usage, preview automation, or suggested branch naming), tell me which part to expand.
 If anything in this file is unclear or missing, tell me which parts you want expanded (devcontainer details, preferred preview commands, or commit conventions).
